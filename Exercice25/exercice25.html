@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+      <meta charset="UTF-8">
+      <title>Exercice 6</title>
+  </head>
+  <body>
+    <div ng-app="">
+      <p id="p1">Cliquez sur 'Afficher' pour voir le contenu !</p>
+      <button ng-click="showme=false">Afficher paragraphe 1</button>
+      <button ng-click="showme=true">Afficher paragraphe 2</button>
+
+      <div class="wrapper">
+        <p ng-hide="showme">Paragraphe 1</p>
+        <p ng-show="showme">Paragraphe 2</p>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+  </body>
+</html>

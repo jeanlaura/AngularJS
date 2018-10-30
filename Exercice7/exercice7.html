@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercice 7</title>
+  </head>
+  <body>
+    <div class="sum">
+      <h1>AngularJS</h1>
+      Faire le calcul : 220 + 304 = {{220+304}}
+      <div ng-app="myApp" ng-controller="myCtrl">
+       Résultat : {{ firstName + lastName }}
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope) {
+       $scope.firstName = 220;
+       $scope.lastName = 304;
+    });
+    </script>
+  </body>
+</html>

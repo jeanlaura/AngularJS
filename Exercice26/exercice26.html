@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+      <meta charset="UTF-8" />
+      <title>Exercice 1</title>
+      <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div ng-app="ngpatternApp" ng-controller="ngpatternCtrl">
+      <!-- Commencement du formulaire ! -->
+      <!-- ng-submit = comme ng-click mais submit parce que formulaire -->
+      <!-- $valid = Le contenu du champ est valide -->
+      <form name="personForm" novalidate ng-submit="personForm.$valid && sendForm()">
+        <!-- Intégration de l'input email avec sa regex fonctionnelle et son required pour en faire un champ requis -->
+        <!-- ng-model = lie la valeur des contrôles HTML (input, select, textarea) aux données de l'application, déclare une valeur -->
+        <label for="mail">Email :</label><input type="text" id="mail" name="mail" ng-model="txtmail" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" required />
+        <!-- Une span pour dire que c'est ok en vert -->
+        <div id="spanGreen" ng-show="personForm.mail.$valid"> OK ! </div>
+        <!-- Une span pour dire que c'est seul les lettres et nombres sont acceptés en rouge -->
+        <!-- $dirty = Une ou plusieurs valeurs de l'input ont été modifiés -->
+        <!-- $error = qui stocke un état clé / valeur des erreurs de validation -->
+        <div id="spanRed" ng-show="personForm.mail.$dirty&&personForm.mail.$error.pattern">Ne correspond pas au format standard d'une adresse Email !</div>
+        <!-- Un petit bouton submit pour le plaisir ! -->
+        <button type="submit">Bouton</button>
+        <!-- Et un message d'insulte bien évidemment ! -->
+        <span id="spanMsg">{{msg}}</span>
+      </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="costCtrl">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercice 4</title>
+  </head>
+  <body>
+    <div>
+      {{ price | currency : '€'}}
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+    <script type="text/javascript">
+      var app = angular.module('myApp', []);
+      app.controller('costCtrl', function($scope) {
+        $scope.price = 3.14159265359;
+      });
+    </script>
+  </body>
+</html>

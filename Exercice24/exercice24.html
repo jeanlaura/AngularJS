@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+      <meta charset="UTF-8">
+      <title>Exercice 5</title>
+  </head>
+  <body>
+    <div ng-app="">
+      <!-- NG-SHOW -->
+      <p class="description">Cliquez sur 'Afficher' pour voir le contenu !</p>
+      <button ng-click="showme=true">Afficher</button>
+      <button ng-click="showme=false">Cacher</button>
+      <div class="wrapper">
+        <!-- <p ng-hide="showme">Ca va s'afficher ici !</p> -->
+        <h2 ng-show="showme">C'est moi le contenu, yo!</h2>
+      </div>
+      <!-- NG-HIDE -->
+      <p class="description">Cliquez sur 'Afficher' pour voir le contenu !</p>
+      <button ng-click="show=false">Afficher</button>
+      <button ng-click="show=true">Cacher</button>
+      <div class="wrapper">
+        <!-- <p ng-hide="showme">Ca va s'afficher ici !</p> -->
+        <h2 ng-hide="show">C'est moi le contenu, yo!</h2>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+  </body>
+</html>
